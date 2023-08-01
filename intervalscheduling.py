@@ -44,11 +44,11 @@ class Solution:
         print(intervals)
         newInter=[]
         for i in range(len(intervals)):
-            min=[10000,0]
+            min=(10000,0)
             for j in range(len(intervals)):
                 if intervals[j][0]<=min[0]:
-                    min=intervals[j][0],intervals[j][1]
-            intervals.remove(min[0])
+                    min=(intervals[j][0],intervals[j][1])
+            intervals.remove(min)
             newInter.append(min)
         print(newInter)
         #for i in newInter:
