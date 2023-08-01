@@ -56,7 +56,7 @@ class Solution:
         print(newInter)
         for i in newInter:
             if i[0] in nums and i[1] in nums:
-                for i in range(i[0],i[1]+1):
+                for j in range(i[0],i[1]+1):
                     nums.remove(i)
                 finalList.append((i[0],i[1]))
         for i in finalList:
