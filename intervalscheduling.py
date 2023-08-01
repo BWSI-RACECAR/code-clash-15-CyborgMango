@@ -46,7 +46,7 @@ class Solution:
         for i in range(len(intervals)):
             min=[10000,0]
             for j in range(len(intervals)):
-                if j[0]<=min[0]:
+                if intervals[j][0]<=min[0]:
                     min=intervals[j][0],intervals[j][1]
             intervals.remove(min[0])
             newInter.append(min)
