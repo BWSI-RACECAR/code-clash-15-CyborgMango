@@ -45,7 +45,7 @@ class Solution:
         i=[0,1,2,3,4,5,6,7,8,9,10,11,12]
         newInter=[]
         for i in range(len(intervals)):
-            min=(10000,0)
+            min=(0,100000)
             for j in range(len(intervals)):
                 if intervals[j][1]-intervals[j][0]<=min[1]-min[0]:
                     min=(intervals[j][0],intervals[j][1])
