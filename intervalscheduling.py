@@ -41,38 +41,17 @@ class Solution:
             #return type: list of int tuples
             
             #TODO: Write code below to return an int tuples list with the solution to the prompt.
-        print(intervals)
-        nums=[0,1,2,3,4,5,6,7,8,9,10,11,12]
-        newInter=[]
-        finalList=[]
-        finalList2=[]
-        for i in range(len(intervals)):
-            min=(0,100000)
-            for j in range(len(intervals)):
-                if intervals[j][1]-intervals[j][0]<=min[1]-min[0]:
-                    min=(intervals[j][0],intervals[j][1])
-            intervals.remove(min)
-            newInter.append(min)
-        print(newInter)
-        for i in newInter:
-            if i[0] in nums and i[1] in nums:
-                for j in range(i[0],i[1]+1):
-                    nums.remove(i)
-                finalList.append((i[0],i[1]))
-        for i in finalList:
-            min=(10000,0)
-            if i[0]<min:
-                min=(i[0],i[1])
-            finalList.remove(min)
-            finalList2.append(min)
-        return finalList2
-            
-                
-
-        #for i in newInter:
-        #    for j in newInter:
-        #        if i[0]=j[1]:
-        #            j.append(())
+        def is_compatible(interval,result):
+            for i in range(len(result)):
+                if interval[0]<result[i][1]:
+                    return False
+            return True
+        sorted_intervals=sorted(intervals,key=lambda x: x[1])
+        result=[]
+        for i in range(len(sorted_intervals)):
+            if is_compatible(sorted_intervals[i],result):
+                result.append(sorted_intervals[i])
+        return result
 
 
 
