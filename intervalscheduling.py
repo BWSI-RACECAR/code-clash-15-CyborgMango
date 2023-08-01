@@ -42,8 +42,10 @@ class Solution:
             
             #TODO: Write code below to return an int tuples list with the solution to the prompt.
         print(intervals)
-        i=[0,1,2,3,4,5,6,7,8,9,10,11,12]
+        nums=[0,1,2,3,4,5,6,7,8,9,10,11,12]
         newInter=[]
+        finalList=[]
+        finalList2=[]
         for i in range(len(intervals)):
             min=(0,100000)
             for j in range(len(intervals)):
@@ -52,8 +54,20 @@ class Solution:
             intervals.remove(min)
             newInter.append(min)
         print(newInter)
-        #for i in newInter:
-        #    if 
+        for i in newInter:
+            if nums.contains(i[0]) and nums.contains(i[1]):
+                for i in range(i[0],i[1]+1):
+                    nums.remove(i)
+                finalList.append(i[0],i[1])
+        for i in finalList:
+            min=(10000,0)
+            if i[0]<min:
+                min=(i[0],i[1])
+            finalList.remove(min)
+            finalList2.append(min)
+        return finalList2
+            
+                
 
         #for i in newInter:
         #    for j in newInter:
