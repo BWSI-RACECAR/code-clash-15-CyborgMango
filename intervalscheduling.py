@@ -55,7 +55,7 @@ class Solution:
             newInter.append(min)
         print(newInter)
         for i in newInter:
-            if nums.contains(i[0]) and nums.contains(i[1]):
+            if i[0] in nums and i[1] in nums:
                 for i in range(i[0],i[1]+1):
                     nums.remove(i)
                 finalList.append(i[0],i[1])
