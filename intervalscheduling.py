@@ -42,15 +42,19 @@ class Solution:
             
             #TODO: Write code below to return an int tuples list with the solution to the prompt.
         print(intervals)
+        i=[0,1,2,3,4,5,6,7,8,9,10,11,12]
         newInter=[]
         for i in range(len(intervals)):
             min=(10000,0)
             for j in range(len(intervals)):
-                if intervals[j][0]<=min[0]:
+                if intervals[j][1]-intervals[j][0]<=min[1]-min[0]:
                     min=(intervals[j][0],intervals[j][1])
             intervals.remove(min)
             newInter.append(min)
         print(newInter)
+        #for i in newInter:
+        #    if 
+
         #for i in newInter:
         #    for j in newInter:
         #        if i[0]=j[1]:
